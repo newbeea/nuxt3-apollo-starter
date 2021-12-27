@@ -3,6 +3,12 @@
 Nuxt3 + Apollo Starter
 </h2><br>
 
+<p align="center">
+<br>
+<a href="https://nuxt3-apollo.netlify.app/">🖥 Online Preview</a>
+<br>
+</p>
+
 ## Features
 
 - 💚 [Nuxt 3](https://v3.nuxtjs.org) - SSR, ESR, File-based routing, components auto importing, modules, etc.
