@@ -50,3 +50,6 @@ npx degit newbeea/nuxt3-apollo-starter my-nuxt3-apollo-app
 cd my-nuxt3-apollo-app
 pnpm i # If you don't have pnpm installed, run: npm install -g pnpm
 ```
+
+### Inspiration
+[antfu/vitesse-nuxt3](https://github.com/antfu/vitesse-nuxt3)
