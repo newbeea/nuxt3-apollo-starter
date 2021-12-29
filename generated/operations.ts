@@ -73,6 +73,8 @@ export type Query = {
   continents: Array<Continent>;
   countries: Array<Country>;
   country?: Maybe<Country>;
+  hello: Scalars['String'];
+  hello2: Scalars['String'];
   language?: Maybe<Language>;
   languages: Array<Language>;
 };
@@ -128,6 +130,11 @@ export type CountryQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type CountryQuery = { __typename?: 'Query', country?: { __typename?: 'Country', name: string, code: string } | null | undefined };
 
+export type HelloQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type HelloQuery = { __typename?: 'Query', hello: string };
+
 
 export const CountryDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Country"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"country"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"code"},"value":{"kind":"StringValue","value":"CN","block":false}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"code"}}]}}]}}]} as unknown as DocumentNode;
 
@@ -147,3 +154,21 @@ export function useCountryQuery(options: VueApolloComposable.UseQueryOptions<Cou
   return VueApolloComposable.useQuery<CountryQuery, CountryQueryVariables>(CountryDocument, {}, options);
 }
 export type CountryQueryCompositionFunctionResult = VueApolloComposable.UseQueryReturn<CountryQuery, CountryQueryVariables>;
+export const HelloDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Hello"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"hello"}}]}}]} as unknown as DocumentNode;
+
+/**
+ * __useHelloQuery__
+ *
+ * To run a query within a Vue component, call `useHelloQuery` and pass it any options that fit your needs.
+ * When your component renders, `useHelloQuery` returns an object from Apollo Client that contains result, loading and error properties
+ * you can use to render your UI.
+ *
+ * @param options that will be passed into the query, supported options are listed on: https://v4.apollo.vuejs.org/guide-composable/query.html#options;
+ *
+ * @example
+ * const { result, loading, error } = useHelloQuery();
+ */
+export function useHelloQuery(options: VueApolloComposable.UseQueryOptions<HelloQuery, HelloQueryVariables> | VueCompositionApi.Ref<VueApolloComposable.UseQueryOptions<HelloQuery, HelloQueryVariables>> | ReactiveFunction<VueApolloComposable.UseQueryOptions<HelloQuery, HelloQueryVariables>> = {}) {
+  return VueApolloComposable.useQuery<HelloQuery, HelloQueryVariables>(HelloDocument, {}, options);
+}
+export type HelloQueryCompositionFunctionResult = VueApolloComposable.UseQueryReturn<HelloQuery, HelloQueryVariables>;

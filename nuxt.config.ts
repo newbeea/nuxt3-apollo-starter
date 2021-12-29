@@ -17,9 +17,15 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxt3/graphql-codegen-module',
     '@nuxt3/apollo-module',
+    './modules/apollo-module.ts',
   ],
   apollo: {
-    uri: 'https://countries.trevorblades.com/',
+    default: {
+      uri: 'https://countries.trevorblades.com/',
+    },
+    local: {
+      uri: 'http://localhost:3344/api/graphql',
+    },
   },
   unocss: {
     uno: true,

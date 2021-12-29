@@ -69,6 +69,8 @@ export type Query = {
   continents: Array<Continent>;
   countries: Array<Country>;
   country?: Maybe<Country>;
+  hello: Scalars['String'];
+  hello2: Scalars['String'];
   language?: Maybe<Language>;
   languages: Array<Language>;
 };
