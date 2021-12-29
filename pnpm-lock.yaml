@@ -15,6 +15,7 @@ specifiers:
   '@nuxt3/graphql-codegen-module': ^0.0.2
   '@pinia/nuxt': ^0.1.6
   '@unocss/nuxt': ^0.16.4
+  '@vue/composition-api': ^1.4.3
   '@vueuse/nuxt': ^7.3.0
   eslint: ^8.4.1
   graphql: ^15.3.0
@@ -25,10 +26,11 @@ specifiers:
 
 dependencies:
   '@apollo/client': 3.5.6_graphql@15.8.0
-  '@nuxt3/apollo-module': 0.0.7_graphql@15.8.0+typescript@4.5.4
+  '@nuxt3/apollo-module': 0.0.7_149f27dbaf435e480b182e1b6551c3db
   '@nuxt3/graphql-codegen-module': 0.0.2_graphql@15.8.0
+  '@vue/composition-api': 1.4.3
   graphql: 15.8.0
-  pinia: 2.0.6_typescript@4.5.4
+  pinia: 2.0.6_7d0b9b7ff64a65e8e17764b58e7c79fa
 
 devDependencies:
   '@antfu/eslint-config': 0.13.1_eslint@8.4.1+typescript@4.5.4
@@ -40,9 +42,9 @@ devDependencies:
   '@iconify-json/twemoji': 1.0.2
   '@nuxt/kit': /@nuxt/kit-edge/3.0.0-27338323.1e98259
   '@nuxt/kit-edge': 3.0.0-27338323.1e98259
-  '@pinia/nuxt': 0.1.6_pinia@2.0.6
+  '@pinia/nuxt': 0.1.6_1f2feab195a43425d06707a649cc8786
   '@unocss/nuxt': 0.16.4
-  '@vueuse/nuxt': 7.3.0
+  '@vueuse/nuxt': 7.3.0_@vue+composition-api@1.4.3
   eslint: 8.4.1
   nuxt3: 3.0.0-27338323.1e98259
   typescript: 4.5.4
@@ -1663,13 +1665,13 @@ packages:
       - webpack-cli
     dev: true
 
-  /@nuxt3/apollo-module/0.0.7_graphql@15.8.0+typescript@4.5.4:
+  /@nuxt3/apollo-module/0.0.7_149f27dbaf435e480b182e1b6551c3db:
     resolution: {integrity: sha512-qeM6SW4Es+f1sw3+caN0v8psVsR9HqLWaNF5QH8xkpN3LswB/95rUcrlFCwLM7h6ZAjowFLfvok8NyXOqVaPxw==}
     dependencies:
       '@apollo/client': 3.5.6_graphql@15.8.0
       '@nuxt/kit': /@nuxt/kit-edge/3.0.0-27338323.1e98259
       '@nuxt/types': 2.15.8
-      '@vue/apollo-composable': 4.0.0-alpha.16_8911765b7e015d2a0d7e205978c1f81d
+      '@vue/apollo-composable': 4.0.0-alpha.16_b28426da4a71fa7193333de41d55cb92
       consola: 2.15.3
       pathe: 0.2.0
     transitivePeerDependencies:
@@ -1701,13 +1703,13 @@ packages:
       - webpack
     dev: false
 
-  /@pinia/nuxt/0.1.6_pinia@2.0.6:
+  /@pinia/nuxt/0.1.6_1f2feab195a43425d06707a649cc8786:
     resolution: {integrity: sha512-w7bM6h0scVtYBVEtXnLzAESfs2WI9GwVbhST1lhojrb173mnKGxii/ufJS5ZLR5LXPwNaF3HTyoYhtu+ZykWZg==}
     peerDependencies:
       pinia: ~2.0.5
     dependencies:
-      pinia: 2.0.6_typescript@4.5.4
-      vue-demi: 0.12.1
+      pinia: 2.0.6_7d0b9b7ff64a65e8e17764b58e7c79fa
+      vue-demi: 0.12.1_@vue+composition-api@1.4.3
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
@@ -2450,7 +2452,7 @@ packages:
       vue: 3.2.26
     dev: true
 
-  /@vue/apollo-composable/4.0.0-alpha.16_8911765b7e015d2a0d7e205978c1f81d:
+  /@vue/apollo-composable/4.0.0-alpha.16_b28426da4a71fa7193333de41d55cb92:
     resolution: {integrity: sha512-P0Zxip0idW7HAkLAmvtso+UNdTNCm+mwAKvw9Nup4MzESDvfuvhXfOxYPZCKtd4Y8fS1FZ0dBGbOrxeQHYyfwQ==}
     peerDependencies:
       '@apollo/client': ^3.4.13
@@ -2462,10 +2464,11 @@ packages:
         optional: true
     dependencies:
       '@apollo/client': 3.5.6_graphql@15.8.0
+      '@vue/composition-api': 1.4.3
       graphql: 15.8.0
       throttle-debounce: 3.0.1
       ts-essentials: 9.1.0_typescript@4.5.4
-      vue-demi: 0.12.1
+      vue-demi: 0.12.1_@vue+composition-api@1.4.3
     transitivePeerDependencies:
       - typescript
     dev: false
@@ -2624,6 +2627,14 @@ packages:
       '@vue/shared': 3.2.26
     dev: true
 
+  /@vue/composition-api/1.4.3:
+    resolution: {integrity: sha512-Qp4rMbESO05/7/Imck027X5lPhbmMX/mtYSDvIMJ14PS4KHY/4GllnQbPEfsBEe1LECFE6HWx2k7HYgcuYNvpg==}
+    peerDependencies:
+      vue: '>= 2.5 < 3'
+    dependencies:
+      tslib: 2.3.1
+    dev: false
+
   /@vue/devtools-api/6.0.0-beta.20.1:
     resolution: {integrity: sha512-R2rfiRY+kZugzWh9ZyITaovx+jpU4vgivAEAiz80kvh3yviiTU3CBuGuyWpSwGz9/C7TkSWVM/FtQRGlZ16n8Q==}
 
@@ -2672,7 +2683,7 @@ packages:
     resolution: {integrity: sha512-vPV6Cq+NIWbH5pZu+V+2QHE9y1qfuTq49uNWw4f7FDEeZaDU2H2cx5jcUZOAKW7qTrUS4k6qZPbMy1x4N96nbA==}
     dev: true
 
-  /@vueuse/core/7.3.0:
+  /@vueuse/core/7.3.0_@vue+composition-api@1.4.3:
     resolution: {integrity: sha512-gPJyMMAquva9Qwqz63qGQT122m5hWI8Kuy8kfPV/JLQU7m01CXooyv8FIrX9TV8OxVcHBTPXPJHY0oyUiFoNgw==}
     peerDependencies:
       '@vue/composition-api': ^1.1.0
@@ -2683,8 +2694,9 @@ packages:
       vue:
         optional: true
     dependencies:
-      '@vueuse/shared': 7.3.0
-      vue-demi: 0.12.1
+      '@vue/composition-api': 1.4.3
+      '@vueuse/shared': 7.3.0_@vue+composition-api@1.4.3
+      vue-demi: 0.12.1_@vue+composition-api@1.4.3
     dev: true
 
   /@vueuse/head/0.7.4_vue@3.2.26:
@@ -2695,18 +2707,18 @@ packages:
       vue: 3.2.26
     dev: true
 
-  /@vueuse/nuxt/7.3.0:
+  /@vueuse/nuxt/7.3.0_@vue+composition-api@1.4.3:
     resolution: {integrity: sha512-lH+cVivQXB73/61/yaDGja0bled2zd6xXHTiIV6sWIhnn/2IOmvkCac6//WTYsqdt4c6FvAV736L5WphvDreoA==}
     dependencies:
-      '@vueuse/core': 7.3.0
+      '@vueuse/core': 7.3.0_@vue+composition-api@1.4.3
       local-pkg: 0.4.0
-      vue-demi: 0.12.1
+      vue-demi: 0.12.1_@vue+composition-api@1.4.3
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
     dev: true
 
-  /@vueuse/shared/7.3.0:
+  /@vueuse/shared/7.3.0_@vue+composition-api@1.4.3:
     resolution: {integrity: sha512-vOAeI84tIXKVkzm8s/Mxbrzhj0QN6NyVc/sC6LrW0AjVNdvpD8sB1dZiDn9yh8T77WJmloCEt4zZVIppeq7I+w==}
     peerDependencies:
       '@vue/composition-api': ^1.1.0
@@ -2717,7 +2729,8 @@ packages:
       vue:
         optional: true
     dependencies:
-      vue-demi: 0.12.1
+      '@vue/composition-api': 1.4.3
+      vue-demi: 0.12.1_@vue+composition-api@1.4.3
     dev: true
 
   /@webassemblyjs/ast/1.11.1:
@@ -8035,7 +8048,7 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /pinia/2.0.6_typescript@4.5.4:
+  /pinia/2.0.6_7d0b9b7ff64a65e8e17764b58e7c79fa:
     resolution: {integrity: sha512-01mP4+KapIcTNSYLhQESy6GW0N8vY5wX3UqOwkC87e7DPjEusNJ8bENrKqdvZaRHbB2rDMOONeAbwMa3+n1/rw==}
     peerDependencies:
       '@vue/composition-api': ^1.4.0
@@ -8047,9 +8060,10 @@ packages:
       typescript:
         optional: true
     dependencies:
+      '@vue/composition-api': 1.4.3
       '@vue/devtools-api': 6.0.0-beta.20.1
       typescript: 4.5.4
-      vue-demi: 0.12.1
+      vue-demi: 0.12.1_@vue+composition-api@1.4.3
     dev: false
 
   /pkg-dir/2.0.0:
@@ -10289,7 +10303,7 @@ packages:
       bundle-runner: 0.0.1
     dev: true
 
-  /vue-demi/0.12.1:
+  /vue-demi/0.12.1_@vue+composition-api@1.4.3:
     resolution: {integrity: sha512-QL3ny+wX8c6Xm1/EZylbgzdoDolye+VpCXRhI2hug9dJTP3OUJ3lmiKN3CsVV3mOJKwFi0nsstbgob0vG7aoIw==}
     engines: {node: '>=12'}
     hasBin: true
@@ -10300,6 +10314,8 @@ packages:
     peerDependenciesMeta:
       '@vue/composition-api':
         optional: true
+    dependencies:
+      '@vue/composition-api': 1.4.3
 
   /vue-eslint-parser/8.0.1_eslint@8.4.1:
     resolution: {integrity: sha512-lhWjDXJhe3UZw2uu3ztX51SJAPGPey1Tff2RK3TyZURwbuI4vximQLzz4nQfCv8CZq4xx7uIiogHMMoSJPr33A==}
