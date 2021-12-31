@@ -6,7 +6,7 @@ import viteSvgIcons from 'vite-plugin-svg-icons'
 
 export default defineNuxtConfig({
   build: {
-    transpile: [],
+    transpile: ['graphql'],
   },
   buildModules: [
     '@vueuse/nuxt',
