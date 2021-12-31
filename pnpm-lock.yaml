@@ -18,6 +18,7 @@ specifiers:
   '@unocss/nuxt': ^0.16.4
   '@vue/composition-api': ^1.4.3
   '@vueuse/nuxt': ^7.3.0
+  apollo-graphql: ^0.9.5
   apollo-server-core: ^3.6.0
   class-validator: ^0.13.2
   eslint: ^8.4.1
@@ -35,6 +36,7 @@ dependencies:
   '@nuxt3/apollo-module': 0.0.9_149f27dbaf435e480b182e1b6551c3db
   '@nuxt3/graphql-codegen-module': 0.0.4_graphql@15.8.0
   '@vue/composition-api': 1.4.3
+  apollo-graphql: 0.9.5_graphql@15.8.0
   apollo-server-core: 3.6.0_graphql@15.8.0
   class-validator: 0.13.2
   graphql: 15.8.0
@@ -3184,6 +3186,18 @@ packages:
       apollo-server-env: 4.2.0
     dev: false
 
+  /apollo-graphql/0.9.5_graphql@15.8.0:
+    resolution: {integrity: sha512-RGt5k2JeBqrmnwRM0VOgWFiGKlGJMfmiif/4JvdaEqhMJ+xqe/9cfDYzXfn33ke2eWixsAbjEbRfy8XbaN9nTw==}
+    engines: {node: '>=6'}
+    peerDependencies:
+      graphql: ^14.2.1 || ^15.0.0
+    dependencies:
+      core-js-pure: 3.20.1
+      graphql: 15.8.0
+      lodash.sortby: 4.7.0
+      sha.js: 2.4.11
+    dev: false
+
   /apollo-reporting-protobuf/3.3.0:
     resolution: {integrity: sha512-51Jwrg0NvHJfKz7TIGU8+Os3rUAqWtXeKRsRtKYtTeMSBPNhzz8UoGjAB3XyVmUXRE3IRmLtDPDRFL7qbxMI/w==}
     dependencies:
@@ -4087,6 +4101,11 @@ packages:
     resolution: {integrity: sha1-Z29us8OZl8LuGsOpJP1hJHSPV40=}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /core-js-pure/3.20.1:
+    resolution: {integrity: sha512-yeNNr3L9cEBwNy6vhhIJ0nko7fE7uFO6PgawcacGt2VWep4WqQx0RiqlkgSP7kqUMC1IKdfO9qPeWXcUheHLVQ==}
+    requiresBuild: true
+    dev: false
 
   /core-util-is/1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}

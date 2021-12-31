@@ -11,6 +11,7 @@
     "@nuxt3/apollo-module": "0.0.9",
     "@nuxt3/graphql-codegen-module": "0.0.4",
     "@vue/composition-api": "^1.4.3",
+    "apollo-graphql": "^0.9.5",
     "apollo-server-core": "^3.6.0",
     "class-validator": "^0.13.2",
     "graphql": "^15.8.0",
