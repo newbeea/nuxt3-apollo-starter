@@ -7,11 +7,17 @@
   },
   "dependencies": {
     "@apollo/client": "^3.5.6",
-    "@nuxt3/apollo-module": "0.0.7",
-    "@nuxt3/graphql-codegen-module": "^0.0.2",
+    "@envelop/core": "^1.6.5",
+    "@nuxt3/apollo-module": "0.0.9",
+    "@nuxt3/graphql-codegen-module": "0.0.4",
     "@vue/composition-api": "^1.4.3",
+    "apollo-server-h3": "^0.1.0",
+    "apollo-server-lambda": "^3.6.0",
+    "class-validator": "^0.13.2",
     "graphql": "^15.3.0",
-    "pinia": "^2.0.6"
+    "pinia": "^2.0.6",
+    "reflect-metadata": "^0.1.13",
+    "type-graphql": "^1.1.1"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.13.1",

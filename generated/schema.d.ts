@@ -63,16 +63,25 @@ export type LanguageFilterInput = {
   code?: InputMaybe<StringQueryOperatorInput>;
 };
 
+export type Person = {
+  __typename?: 'Person';
+  name: Scalars['String'];
+  tags?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type PersonInput = {
+  name: Scalars['String'];
+};
+
 export type Query = {
   __typename?: 'Query';
   continent?: Maybe<Continent>;
   continents: Array<Continent>;
   countries: Array<Country>;
   country?: Maybe<Country>;
-  hello: Scalars['String'];
-  hello2: Scalars['String'];
   language?: Maybe<Language>;
   languages: Array<Language>;
+  person: Person;
 };
 
 
@@ -103,6 +112,11 @@ export type QueryLanguageArgs = {
 
 export type QueryLanguagesArgs = {
   filter?: InputMaybe<LanguageFilterInput>;
+};
+
+
+export type QueryPersonArgs = {
+  personInput: PersonInput;
 };
 
 export type State = {

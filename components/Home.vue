@@ -1,13 +1,21 @@
 <script setup lang="ts">
-import { useCountryQuery, useHelloQuery } from '@/generated/operations'
-const { result: server, loading: jumpLoading } = await useCountryQuery({
-})
+import { useCountryQuery, usePersonQuery } from '@/generated/operations'
 
-const { result: client, loading: queryLoading } = await useHelloQuery({
-  clientId: 'local',
+const { result: client, loading: queryLoading } = await useCountryQuery({
+  clientId: 'trevorblades',
   prefetch: false, // need check result in template
 })
-const { $apollo } = useNuxtApp()
+
+const { result: server, loading: jumpLoading, error } = await usePersonQuery({
+  personInput: {
+    name: 'Phil Xu',
+  },
+}, {
+  prefetch: true, // need check result in template
+})
+
+// use clients directly $apollo.default  $apollo.trevorblades
+// const { $apollo } = useNuxtApp()
 
 </script>
 
@@ -20,15 +28,18 @@ const { $apollo } = useNuxtApp()
       <div v-if="queryLoading">
         Loading when client only
       </div>
-      <div v-else-if="client && client.hello">
-        Client only: {{ client.hello }}
+      <div v-else-if="client && client.country">
+        Client only: {{ client.country.name }}
       </div>
 
       <div v-if="jumpLoading">
         Loading when jump from other landing page
       </div>
-      <div v-else-if="server && server.country">
-        Prefetch on landing page: {{ server.country.name }}
+      <div v-else-if="server && server.person">
+        Prefetch on landing page: {{ server.person.name }}
+      </div>
+      <div v-else-if="error">
+        {{ error }}
       </div>
 
       <div>

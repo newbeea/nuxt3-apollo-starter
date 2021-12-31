@@ -6,25 +6,23 @@ import viteSvgIcons from 'vite-plugin-svg-icons'
 
 export default defineNuxtConfig({
   build: {
-    transpile: [
-      '@apollo/client',
-      'ts-invariant/process',
-    ],
+    transpile: [],
   },
   buildModules: [
     '@vueuse/nuxt',
     '@unocss/nuxt',
     '@pinia/nuxt',
+    // './modules/graphql-codegen-module.ts',
     '@nuxt3/graphql-codegen-module',
+    // './modules/apollo-module.ts',
     '@nuxt3/apollo-module',
-    './modules/apollo-module.ts',
   ],
   apollo: {
-    default: {
+    trevorblades: {
       uri: 'https://countries.trevorblades.com/',
     },
-    local: {
-      uri: 'http://localhost:3344/api/graphql',
+    default: {
+      uri: 'http://localhost:3000/api/graphql',
     },
   },
   unocss: {

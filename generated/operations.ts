@@ -67,16 +67,25 @@ export type LanguageFilterInput = {
   code?: InputMaybe<StringQueryOperatorInput>;
 };
 
+export type Person = {
+  __typename?: 'Person';
+  name: Scalars['String'];
+  tags?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type PersonInput = {
+  name: Scalars['String'];
+};
+
 export type Query = {
   __typename?: 'Query';
   continent?: Maybe<Continent>;
   continents: Array<Continent>;
   countries: Array<Country>;
   country?: Maybe<Country>;
-  hello: Scalars['String'];
-  hello2: Scalars['String'];
   language?: Maybe<Language>;
   languages: Array<Language>;
+  person: Person;
 };
 
 
@@ -109,6 +118,11 @@ export type QueryLanguagesArgs = {
   filter?: InputMaybe<LanguageFilterInput>;
 };
 
+
+export type QueryPersonArgs = {
+  personInput: PersonInput;
+};
+
 export type State = {
   __typename?: 'State';
   code?: Maybe<Scalars['String']>;
@@ -130,10 +144,12 @@ export type CountryQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type CountryQuery = { __typename?: 'Query', country?: { __typename?: 'Country', name: string, code: string } | null | undefined };
 
-export type HelloQueryVariables = Exact<{ [key: string]: never; }>;
+export type PersonQueryVariables = Exact<{
+  personInput: PersonInput;
+}>;
 
 
-export type HelloQuery = { __typename?: 'Query', hello: string };
+export type PersonQuery = { __typename?: 'Query', person: { __typename?: 'Person', name: string, tags?: Array<string | null | undefined> | null | undefined } };
 
 
 export const CountryDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Country"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"country"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"code"},"value":{"kind":"StringValue","value":"CN","block":false}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"code"}}]}}]}}]} as unknown as DocumentNode;
@@ -154,21 +170,24 @@ export function useCountryQuery(options: VueApolloComposable.UseQueryOptions<Cou
   return VueApolloComposable.useQuery<CountryQuery, CountryQueryVariables>(CountryDocument, {}, options);
 }
 export type CountryQueryCompositionFunctionResult = VueApolloComposable.UseQueryReturn<CountryQuery, CountryQueryVariables>;
-export const HelloDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Hello"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"hello"}}]}}]} as unknown as DocumentNode;
+export const PersonDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Person"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"personInput"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"PersonInput"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"person"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"personInput"},"value":{"kind":"Variable","name":{"kind":"Name","value":"personInput"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"tags"}}]}}]}}]} as unknown as DocumentNode;
 
 /**
- * __useHelloQuery__
+ * __usePersonQuery__
  *
- * To run a query within a Vue component, call `useHelloQuery` and pass it any options that fit your needs.
- * When your component renders, `useHelloQuery` returns an object from Apollo Client that contains result, loading and error properties
+ * To run a query within a Vue component, call `usePersonQuery` and pass it any options that fit your needs.
+ * When your component renders, `usePersonQuery` returns an object from Apollo Client that contains result, loading and error properties
  * you can use to render your UI.
  *
+ * @param variables that will be passed into the query
  * @param options that will be passed into the query, supported options are listed on: https://v4.apollo.vuejs.org/guide-composable/query.html#options;
  *
  * @example
- * const { result, loading, error } = useHelloQuery();
+ * const { result, loading, error } = usePersonQuery({
+ *   personInput: // value for 'personInput'
+ * });
  */
-export function useHelloQuery(options: VueApolloComposable.UseQueryOptions<HelloQuery, HelloQueryVariables> | VueCompositionApi.Ref<VueApolloComposable.UseQueryOptions<HelloQuery, HelloQueryVariables>> | ReactiveFunction<VueApolloComposable.UseQueryOptions<HelloQuery, HelloQueryVariables>> = {}) {
-  return VueApolloComposable.useQuery<HelloQuery, HelloQueryVariables>(HelloDocument, {}, options);
+export function usePersonQuery(variables: PersonQueryVariables | VueCompositionApi.Ref<PersonQueryVariables> | ReactiveFunction<PersonQueryVariables>, options: VueApolloComposable.UseQueryOptions<PersonQuery, PersonQueryVariables> | VueCompositionApi.Ref<VueApolloComposable.UseQueryOptions<PersonQuery, PersonQueryVariables>> | ReactiveFunction<VueApolloComposable.UseQueryOptions<PersonQuery, PersonQueryVariables>> = {}) {
+  return VueApolloComposable.useQuery<PersonQuery, PersonQueryVariables>(PersonDocument, variables, options);
 }
-export type HelloQueryCompositionFunctionResult = VueApolloComposable.UseQueryReturn<HelloQuery, HelloQueryVariables>;
+export type PersonQueryCompositionFunctionResult = VueApolloComposable.UseQueryReturn<PersonQuery, PersonQueryVariables>;
