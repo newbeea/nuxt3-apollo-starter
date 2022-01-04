@@ -22,7 +22,7 @@ export default defineNuxtConfig({
       uri: 'https://countries.trevorblades.com/',
     },
     default: {
-      uri: 'http://localhost:3000/api/graphql',
+      uri: process.env.URL ? `https://${process.env.URL}/api/graphql` : 'http://localhost:3000/api/graphql',
     },
   },
   unocss: {
