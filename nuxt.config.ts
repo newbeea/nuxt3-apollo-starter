@@ -1,6 +1,7 @@
 import path from 'path'
 import { defineNuxtConfig } from 'nuxt3'
 import '@nuxt3/apollo-module'
+import '@nuxt3/graphql-codegen-module'
 import '@unocss/nuxt'
 import viteSvgIcons from 'vite-plugin-svg-icons'
 
@@ -17,12 +18,15 @@ export default defineNuxtConfig({
     // './modules/apollo-module.ts',
     '@nuxt3/apollo-module',
   ],
+  graphqlCodegen: {
+    schema: ['http://localhost:3000/api/graphql', 'https://countries.trevorblades.com/'],
+  },
   apollo: {
     trevorblades: {
       uri: 'https://countries.trevorblades.com/',
     },
     default: {
-      uri: process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}/api/graphql` : 'http://localhost:3000/api/graphql',
+      uri: process.env.URL ? `${process.env.URL}/api/graphql` : 'http://localhost:3000/api/graphql',
     },
   },
   unocss: {

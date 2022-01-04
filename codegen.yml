@@ -1,4 +1,4 @@
-schema: [./.nuxt/schema.graphql, https://countries.trevorblades.com/]
+
 documents: graphql/**/*.graphql
 generates:
   generated/schema.d.ts:

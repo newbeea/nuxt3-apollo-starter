@@ -13,7 +13,7 @@ specifiers:
   '@nuxt/kit': npm:@nuxt/kit-edge@3.0.0-27338323.1e98259
   '@nuxt/kit-edge': 3.0.0-27338323.1e98259
   '@nuxt3/apollo-module': 0.0.9
-  '@nuxt3/graphql-codegen-module': 0.0.4
+  '@nuxt3/graphql-codegen-module': 0.0.5
   '@pinia/nuxt': ^0.1.6
   '@unocss/nuxt': ^0.16.4
   '@vue/composition-api': ^1.4.3
@@ -35,7 +35,7 @@ dependencies:
   '@apollo/client': 3.5.6_graphql@15.8.0
   '@envelop/core': 1.6.5_graphql@15.8.0
   '@nuxt3/apollo-module': 0.0.9_149f27dbaf435e480b182e1b6551c3db
-  '@nuxt3/graphql-codegen-module': 0.0.4_graphql@15.8.0
+  '@nuxt3/graphql-codegen-module': 0.0.5_graphql@15.8.0
   '@vue/composition-api': 1.4.3
   apollo-graphql: 0.9.5_graphql@15.8.0
   apollo-server-core: 3.6.0_graphql@15.8.0
@@ -1762,14 +1762,15 @@ packages:
       - webpack
     dev: false
 
-  /@nuxt3/graphql-codegen-module/0.0.4_graphql@15.8.0:
-    resolution: {integrity: sha512-1BSy/aGuLlXMCNWlBiM/Dra4LeFVbQbRP/rHRt6TWKotAPeQ312tghkrxi+gtOZVSaXfiX21Pfpdmz1ZtlCuSA==}
+  /@nuxt3/graphql-codegen-module/0.0.5_graphql@15.8.0:
+    resolution: {integrity: sha512-e1Y5PE+4aS8M8bCH+Xh7mKCQ1G9INXaw66Z2dENCJ2N5miqFSob/ckkkuCeQ6ygE2jIa4SbJkDn7IXr5JWa+CA==}
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
       '@nuxt/kit': /@nuxt/kit-edge/3.0.0-27338323.1e98259
       '@nuxt/types': 2.15.8
       consola: 2.15.3
+      defu: 5.0.0
       graphql: 15.8.0
     transitivePeerDependencies:
       - fibers
