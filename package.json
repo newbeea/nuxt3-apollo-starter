@@ -17,7 +17,8 @@
     "graphql": "^15.8.0",
     "pinia": "^2.0.6",
     "reflect-metadata": "^0.1.13",
-    "type-graphql": "^1.1.1"
+    "type-graphql": "^1.1.1",
+    "unenv": "^0.4.3"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.13.1",
