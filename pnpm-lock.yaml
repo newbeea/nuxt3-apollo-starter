@@ -1,5 +1,8 @@
 lockfileVersion: 5.3
 
+overrides:
+  resolve: 1.20.0
+
 specifiers:
   '@antfu/eslint-config': ^0.13.1
   '@apollo/client': ^3.5.6
@@ -13,7 +16,7 @@ specifiers:
   '@nuxt/kit': npm:@nuxt/kit-edge@3.0.0-27338323.1e98259
   '@nuxt/kit-edge': 3.0.0-27338323.1e98259
   '@nuxt3/apollo-module': 0.0.9
-  '@nuxt3/graphql-codegen-module': 0.0.5
+  '@nuxt3/graphql-codegen-module': 0.0.6
   '@pinia/nuxt': ^0.1.6
   '@unocss/nuxt': ^0.16.4
   '@vue/composition-api': ^1.4.3
@@ -35,7 +38,7 @@ dependencies:
   '@apollo/client': 3.5.6_graphql@15.8.0
   '@envelop/core': 1.6.5_graphql@15.8.0
   '@nuxt3/apollo-module': 0.0.9_149f27dbaf435e480b182e1b6551c3db
-  '@nuxt3/graphql-codegen-module': 0.0.5_graphql@15.8.0
+  '@nuxt3/graphql-codegen-module': 0.0.6_graphql@15.8.0
   '@vue/composition-api': 1.4.3
   apollo-graphql: 0.9.5_graphql@15.8.0
   apollo-server-core: 3.6.0_graphql@15.8.0
@@ -418,11 +421,6 @@ packages:
       '@babel/types': 7.16.0
     dev: true
 
-  /@babel/helper-plugin-utils/7.14.5:
-    resolution: {integrity: sha512-/37qQCE3K0vvZKwoK4XU/irIJQdIfCJuhU5eKnNxpFDsOkgFaUAwbv+RYw6eYgsC0E4hS7r5KqGULUogqui0fQ==}
-    engines: {node: '>=6.9.0'}
-    dev: true
-
   /@babel/helper-plugin-utils/7.16.5:
     resolution: {integrity: sha512-59KHWHXxVA9K4HNF4sbHCf+eJeFe0Te/ZFGqBT4OjXhrwvA04sGfaEGsVTdsjoszq0YTP49RC9UKe5g8uN2RwQ==}
     engines: {node: '>=6.9.0'}
@@ -535,7 +533,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.16.5
-      '@babel/helper-plugin-utils': 7.14.5
+      '@babel/helper-plugin-utils': 7.16.5
     dev: true
 
   /@babel/plugin-syntax-flow/7.16.5_@babel+core@7.16.5:
@@ -557,16 +555,6 @@ packages:
       '@babel/helper-plugin-utils': 7.16.5
     dev: true
 
-  /@babel/plugin-syntax-jsx/7.16.0_@babel+core@7.16.5:
-    resolution: {integrity: sha512-8zv2+xiPHwly31RK4RmnEYY5zziuF3O7W2kIDW+07ewWDh6Oi0dRq8kwvulRkFgt6DB97RlKs5c1y068iPlCUg==}
-    engines: {node: '>=6.9.0'}
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
-    dependencies:
-      '@babel/core': 7.16.5
-      '@babel/helper-plugin-utils': 7.14.5
-    dev: true
-
   /@babel/plugin-syntax-jsx/7.16.5_@babel+core@7.16.5:
     resolution: {integrity: sha512-42OGssv9NPk4QHKVgIHlzeLgPOW5rGgfV5jzG90AhcXXIv6hu/eqj63w4VgvRxdvZY3AlYeDgPiSJ3BqAd1Y6Q==}
     engines: {node: '>=6.9.0'}
@@ -583,7 +571,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.16.5
-      '@babel/helper-plugin-utils': 7.14.5
+      '@babel/helper-plugin-utils': 7.16.5
     dev: true
 
   /@babel/plugin-syntax-typescript/7.16.0_@babel+core@7.16.5:
@@ -1762,8 +1750,8 @@ packages:
       - webpack
     dev: false
 
-  /@nuxt3/graphql-codegen-module/0.0.5_graphql@15.8.0:
-    resolution: {integrity: sha512-e1Y5PE+4aS8M8bCH+Xh7mKCQ1G9INXaw66Z2dENCJ2N5miqFSob/ckkkuCeQ6ygE2jIa4SbJkDn7IXr5JWa+CA==}
+  /@nuxt3/graphql-codegen-module/0.0.6_graphql@15.8.0:
+    resolution: {integrity: sha512-6fBCfatjhodiJX01Ry/eNA5bLyE8xSsjy1eW3biGEiIV7fNPsGuV2oeRZivQnpKUWQvVB16aCebFxRk28+Q/jQ==}
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
@@ -3508,7 +3496,7 @@ packages:
       '@babel/plugin-proposal-object-rest-spread': 7.16.5_@babel+core@7.16.5
       '@babel/plugin-syntax-class-properties': 7.12.13_@babel+core@7.16.5
       '@babel/plugin-syntax-flow': 7.16.5_@babel+core@7.16.5
-      '@babel/plugin-syntax-jsx': 7.16.0_@babel+core@7.16.5
+      '@babel/plugin-syntax-jsx': 7.16.5_@babel+core@7.16.5
       '@babel/plugin-syntax-object-rest-spread': 7.8.3_@babel+core@7.16.5
       '@babel/plugin-transform-arrow-functions': 7.16.5_@babel+core@7.16.5
       '@babel/plugin-transform-block-scoped-functions': 7.16.5_@babel+core@7.16.5
@@ -5253,7 +5241,7 @@ packages:
       object.hasown: 1.1.0
       object.values: 1.1.5
       prop-types: 15.7.2
-      resolve: 2.0.0-next.3
+      resolve: 1.20.0
       semver: 6.3.0
       string.prototype.matchall: 4.0.6
     dev: true
@@ -9159,13 +9147,6 @@ packages:
 
   /resolve/1.20.0:
     resolution: {integrity: sha512-wENBPt4ySzg4ybFQW2TT1zMQucPK95HSh/nq2CFTZVOGut2+pQvSsgtda4d26YrYcr067wjbmzOG8byDPBX63A==}
-    dependencies:
-      is-core-module: 2.8.0
-      path-parse: 1.0.7
-    dev: true
-
-  /resolve/2.0.0-next.3:
-    resolution: {integrity: sha512-W8LucSynKUIDu9ylraa7ueVZ7hc0uAgJBxVsQSKOXOyle8a93qXhcz+XAXZ8bIq2d6i4Ehddn6Evt+0/UwKk6Q==}
     dependencies:
       is-core-module: 2.8.0
       path-parse: 1.0.7
