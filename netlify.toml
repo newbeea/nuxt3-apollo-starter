@@ -4,6 +4,7 @@
 
 [build]
   publish = "dist"
+  command = "yarn run build"
 
 [[redirects]]
   from = "/*"
