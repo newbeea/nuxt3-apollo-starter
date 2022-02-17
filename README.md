@@ -73,7 +73,7 @@ If you prefer to do it manually with the cleaner git history
 ```bash
 npx degit newbeea/nuxt3-apollo-starter my-nuxt3-apollo-app
 cd my-nuxt3-apollo-app
-pnpm i # If you don't have pnpm installed, run: npm install -g pnpm
+yarn # npm pnpm may not work properly in production mode
 ```
 
 ### Inspiration
