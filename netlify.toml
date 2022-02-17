@@ -4,7 +4,7 @@
 
 [build]
   publish = "dist"
-  command = "yarn run build"
+  command = "yarn run build:netlify"
 
 [[redirects]]
   from = "/*"
