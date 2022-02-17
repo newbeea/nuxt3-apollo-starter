@@ -74,7 +74,75 @@ If you prefer to do it manually with the cleaner git history
 npx degit newbeea/nuxt3-apollo-starter my-nuxt3-apollo-app
 cd my-nuxt3-apollo-app
 yarn # npm pnpm may not work properly in production mode
+yarn run dev
 ```
+
+
+### Deploy
+#### Normal server
+
+#### Setup URL environment variable (if you want to use graphql server in server/api/graphql)
+
+setup URL environment when build
+for example:
+add in package.json
+```
+"build": "cross-env URL=https://xxx.yourdomain.com nuxi build"
+```
+build
+```
+yarn run build
+```
+start
+```
+yarn run start
+```
+#### Serverless(aws lambda) mode
+
+##### Setup cdn 
+set cdnURL in nuxt.config.ts
+
+#### Setup URL environment variable (if you want to use graphql server in server/api/graphql)
+
+setup URL environment when build
+for example:
+add in package.json
+```
+"build:sls": "cross-env NITRO_PRESET=lambda URL=https://xxx.yourdomain.com nuxi build"
+```
+##### build with lambda preset
+```
+yarn run build:sls
+```
+##### upload static files
+upload .output/server/public/* to cdn (cdnURL)
+
+##### custom domain (optional) 
+config customDomain in serverless.yml
+```
+custom:
+  customDomain:
+    http:
+      domainName: xxx.yourdomain.com
+      endpointType: regional
+      certificateName: yourdomain.com
+      createRoute53Record: true
+plugins:
+  - serverless-domain-manager
+```
+then
+```
+yarn run domain
+```
+#### deploy
+```
+yarn run deploy
+```
+then visit xxx.yourdomain.com
+
+
+
+
 
 ### Inspiration
 [antfu/vitesse-nuxt3](https://github.com/antfu/vitesse-nuxt3)

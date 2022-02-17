@@ -2,6 +2,9 @@
   "private": true,
   "scripts": {
     "build": "nuxi build",
+    "build:sls": "cross-env NITRO_PRESET=lambda URL=http://localhost:3000 nuxi build",
+    "deploy": "serverless deploy",
+    "domain": "serverless create_domain",
     "dev": "nuxi dev",
     "start": "node .output/server/index.mjs"
   },
@@ -34,6 +37,8 @@
     "@vueuse/nuxt": "^7.3.0",
     "eslint": "^8.4.1",
     "nuxt3": "3.0.0-27417467.467ab69",
+    "serverless": "^3.2.1",
+    "serverless-domain-manager": "^6.0.2",
     "typescript": "^4.5.4",
     "vite-plugin-svg-icons": "^1.0.5"
   },
