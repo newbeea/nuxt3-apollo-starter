@@ -36,6 +36,7 @@
     "@pinia/nuxt": "^0.1.6",
     "@unocss/nuxt": "^0.16.4",
     "@vueuse/nuxt": "^7.3.0",
+    "cross-env": "^7.0.3",
     "eslint": "^8.4.1",
     "nuxt3": "3.0.0-27417467.467ab69",
     "serverless": "^3.2.1",
