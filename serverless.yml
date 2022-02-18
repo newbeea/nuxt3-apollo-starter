@@ -23,6 +23,7 @@ functions:
   ssr:
     handler: .output/server/index.handler
     runtime: nodejs14.x
+    memorySize: 256
     package:
       exclude:
         - ./**
