@@ -6,9 +6,6 @@ import '@unocss/nuxt'
 import viteSvgIcons from 'vite-plugin-svg-icons'
 
 export default defineNuxtConfig({
-  nitro: {
-    preset: process.env.NITRO_PRESET || 'server',
-  },
   app: {
     // cdnURL: 'https://d17a2275ko4nj4.cloudfront.net', // upload .output/server/public to cdn when using serverless
   },

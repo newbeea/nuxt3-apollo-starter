@@ -2,8 +2,7 @@
   "private": true,
   "scripts": {
     "build": "nuxi build",
-    "build:sls": "cross-env NITRO_PRESET=lambda URL=http://localhost:3000 nuxi build",
-    "build:netlify": "cross-env NITRO_PRESET=netlify nuxi build",
+    "build:sls": "cross-env NITRO_PRESET=lambda nuxi build",
     "deploy": "serverless deploy",
     "domain": "serverless create_domain",
     "dev": "nuxi dev",
