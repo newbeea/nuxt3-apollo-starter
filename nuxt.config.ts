@@ -1,10 +1,9 @@
 import path from 'path'
 import { defineNuxtConfig } from 'nuxt3'
-import '@nuxt3/apollo-module'
-import '@nuxt3/graphql-codegen-module'
-import '@unocss/nuxt'
+// import '@nuxt3/apollo-module'
+// import '@nuxt3/graphql-codegen-module'
+// import '@unocss/nuxt'
 import viteSvgIcons from 'vite-plugin-svg-icons'
-
 export default defineNuxtConfig({
   app: {
     // cdnURL: 'https://d17a2275ko4nj4.cloudfront.net', // upload .output/server/public to cdn when using serverless
@@ -16,6 +15,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@unocss/nuxt',
     '@pinia/nuxt',
+    '@intlify/nuxt3',
     // './modules/graphql-codegen-module.ts',
     '@nuxt3/graphql-codegen-module',
     // './modules/apollo-module.ts',
@@ -59,5 +59,10 @@ export default defineNuxtConfig({
         symbolId: 'icon-[dir]-[name]',
       }),
     ],
+  },
+  intlify: {
+    localeDir: 'locales', // set the `locales` directory at source directory of your Nuxt application
+    vueI18n: {
+    },
   },
 })

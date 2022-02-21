@@ -10,14 +10,8 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
-  /** The `Upload` scalar type represents a file upload. */
-  Upload: any;
+  _Any: any;
 };
-
-export enum CacheControlScope {
-  Private = 'PRIVATE',
-  Public = 'PUBLIC'
-}
 
 export type Continent = {
   __typename?: 'Continent';
@@ -75,6 +69,8 @@ export type PersonInput = {
 
 export type Query = {
   __typename?: 'Query';
+  _entities: Array<Maybe<_Entity>>;
+  _service: _Service;
   continent?: Maybe<Continent>;
   continents: Array<Continent>;
   countries: Array<Country>;
@@ -82,6 +78,11 @@ export type Query = {
   language?: Maybe<Language>;
   languages: Array<Language>;
   person: Person;
+};
+
+
+export type Query_EntitiesArgs = {
+  representations: Array<Scalars['_Any']>;
 };
 
 
@@ -133,4 +134,12 @@ export type StringQueryOperatorInput = {
   ne?: InputMaybe<Scalars['String']>;
   nin?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   regex?: InputMaybe<Scalars['String']>;
+};
+
+export type _Entity = Continent | Country | Language;
+
+export type _Service = {
+  __typename?: '_Service';
+  /** The sdl representing the federated service capabilities. Includes federation directives, removes federation types, and includes rest of full schema after schema directives have been applied */
+  sdl?: Maybe<Scalars['String']>;
 };

@@ -12,10 +12,6 @@ Nuxt3 + Apollo Starter
 
 - 💚 [Nuxt 3](https://v3.nuxtjs.org) - SSR, ESR, File-based routing, components auto importing, modules, etc.
 
-- 💻 [TypeGraphql](https://typegraphql.com/docs/introduction.html) + [Apollo Server](https://www.apollographql.com/docs/apollo-server/) 
-
-- 💼 [@nuxt3/graphql-codegen-module](https://github.com/newbeea/nuxt3-graphql-codegen-module) - generate types and apollo composable query code on every build
-
 - 🌞 [@nuxt3/apollo-module](https://github.com/newbeea/nuxt3-apollo-module) - composable query, multiple [apollo clients](https://www.apollographql.com/docs/react/), ssr or client mode
   For example:
   ```
@@ -38,7 +34,11 @@ Nuxt3 + Apollo Starter
   // const { $apollo } = useNuxtApp()
   ```
 
+- 💻 [TypeGraphql](https://typegraphql.com/docs/introduction.html) + [Apollo Server](https://www.apollographql.com/docs/apollo-server/) 
 
+- 💼 [@nuxt3/graphql-codegen-module](https://github.com/newbeea/nuxt3-graphql-codegen-module) - generate types and apollo composable query code on every build
+
+- 🌏 [i18n](https://github.com/intlify/nuxt3) customized intlify i18n - set preferred language according to browser, and save user's preferred language to cookie.
 
 - 🧩 Use svg by file name
   For example:

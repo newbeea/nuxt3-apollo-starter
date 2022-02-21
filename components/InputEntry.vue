@@ -13,7 +13,7 @@ const go = () => {
     <input
       id="input"
       v-model="name"
-      placeholder="What's your name?"
+      :placeholder="$t('name')"
       type="text"
       autocomplete="false"
       p="x-4 y-2"
@@ -31,7 +31,7 @@ const go = () => {
         :disabled="!name"
         @click="go"
       >
-        GO
+        {{ $t('go') }}
       </button>
     </div>
   </div>

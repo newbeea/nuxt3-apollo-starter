@@ -25,18 +25,18 @@ const { result: server, loading: jumpLoading, error } = await usePersonQuery({
       <h3 text-2xl font-500>
         Graphql Api
       </h3>
-      <div v-if="queryLoading">
-        Loading when client only
+      <div v-show="queryLoading">
+        {{ $t('clientLoading') }}
       </div>
-      <div v-else-if="client && client.country">
-        Client only: {{ client.country.name }}
+      <div v-if="client && client.country">
+        {{ $t('clientMode') }}: {{ $t(client.country.name) }}
       </div>
 
-      <div v-if="jumpLoading">
-        Loading when jump from other landing page
+      <div v-show="jumpLoading">
+        {{ $t('ssrLoading') }}
       </div>
-      <div v-else-if="server && server.person">
-        Prefetch on landing page: {{ server.person.name }}
+      <div v-if="server && server.person">
+        {{ $t('ssrMode') }}: {{ $t(server.person.name) }}
       </div>
       <div v-else-if="error">
         {{ error }}

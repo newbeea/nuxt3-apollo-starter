@@ -14,14 +14,8 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
-  /** The `Upload` scalar type represents a file upload. */
-  Upload: any;
+  _Any: any;
 };
-
-export enum CacheControlScope {
-  Private = 'PRIVATE',
-  Public = 'PUBLIC'
-}
 
 export type Continent = {
   __typename?: 'Continent';
@@ -79,6 +73,8 @@ export type PersonInput = {
 
 export type Query = {
   __typename?: 'Query';
+  _entities: Array<Maybe<_Entity>>;
+  _service: _Service;
   continent?: Maybe<Continent>;
   continents: Array<Continent>;
   countries: Array<Country>;
@@ -86,6 +82,11 @@ export type Query = {
   language?: Maybe<Language>;
   languages: Array<Language>;
   person: Person;
+};
+
+
+export type Query_EntitiesArgs = {
+  representations: Array<Scalars['_Any']>;
 };
 
 
@@ -139,17 +140,25 @@ export type StringQueryOperatorInput = {
   regex?: InputMaybe<Scalars['String']>;
 };
 
+export type _Entity = Continent | Country | Language;
+
+export type _Service = {
+  __typename?: '_Service';
+  /** The sdl representing the federated service capabilities. Includes federation directives, removes federation types, and includes rest of full schema after schema directives have been applied */
+  sdl?: Maybe<Scalars['String']>;
+};
+
 export type CountryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type CountryQuery = { __typename?: 'Query', country?: { __typename?: 'Country', name: string, code: string } | null | undefined };
+export type CountryQuery = { __typename?: 'Query', country?: { __typename?: 'Country', name: string, code: string } | null };
 
 export type PersonQueryVariables = Exact<{
   personInput: PersonInput;
 }>;
 
 
-export type PersonQuery = { __typename?: 'Query', person: { __typename?: 'Person', name: string, tags?: Array<string | null | undefined> | null | undefined } };
+export type PersonQuery = { __typename?: 'Query', person: { __typename?: 'Person', name: string, tags?: Array<string | null> | null } };
 
 
 export const CountryDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Country"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"country"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"code"},"value":{"kind":"StringValue","value":"CN","block":false}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"code"}}]}}]}}]} as unknown as DocumentNode;
@@ -168,6 +177,9 @@ export const CountryDocument = {"kind":"Document","definitions":[{"kind":"Operat
  */
 export function useCountryQuery(options: VueApolloComposable.UseQueryOptions<CountryQuery, CountryQueryVariables> | VueCompositionApi.Ref<VueApolloComposable.UseQueryOptions<CountryQuery, CountryQueryVariables>> | ReactiveFunction<VueApolloComposable.UseQueryOptions<CountryQuery, CountryQueryVariables>> = {}) {
   return VueApolloComposable.useQuery<CountryQuery, CountryQueryVariables>(CountryDocument, {}, options);
+}
+export function useCountryLazyQuery(options: VueApolloComposable.UseQueryOptions<CountryQuery, CountryQueryVariables> | VueCompositionApi.Ref<VueApolloComposable.UseQueryOptions<CountryQuery, CountryQueryVariables>> | ReactiveFunction<VueApolloComposable.UseQueryOptions<CountryQuery, CountryQueryVariables>> = {}) {
+  return VueApolloComposable.useLazyQuery<CountryQuery, CountryQueryVariables>(CountryDocument, {}, options);
 }
 export type CountryQueryCompositionFunctionResult = VueApolloComposable.UseQueryReturn<CountryQuery, CountryQueryVariables>;
 export const PersonDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Person"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"personInput"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"PersonInput"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"person"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"personInput"},"value":{"kind":"Variable","name":{"kind":"Name","value":"personInput"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"tags"}}]}}]}}]} as unknown as DocumentNode;
@@ -189,5 +201,8 @@ export const PersonDocument = {"kind":"Document","definitions":[{"kind":"Operati
  */
 export function usePersonQuery(variables: PersonQueryVariables | VueCompositionApi.Ref<PersonQueryVariables> | ReactiveFunction<PersonQueryVariables>, options: VueApolloComposable.UseQueryOptions<PersonQuery, PersonQueryVariables> | VueCompositionApi.Ref<VueApolloComposable.UseQueryOptions<PersonQuery, PersonQueryVariables>> | ReactiveFunction<VueApolloComposable.UseQueryOptions<PersonQuery, PersonQueryVariables>> = {}) {
   return VueApolloComposable.useQuery<PersonQuery, PersonQueryVariables>(PersonDocument, variables, options);
+}
+export function usePersonLazyQuery(variables: PersonQueryVariables | VueCompositionApi.Ref<PersonQueryVariables> | ReactiveFunction<PersonQueryVariables>, options: VueApolloComposable.UseQueryOptions<PersonQuery, PersonQueryVariables> | VueCompositionApi.Ref<VueApolloComposable.UseQueryOptions<PersonQuery, PersonQueryVariables>> | ReactiveFunction<VueApolloComposable.UseQueryOptions<PersonQuery, PersonQueryVariables>> = {}) {
+  return VueApolloComposable.useLazyQuery<PersonQuery, PersonQueryVariables>(PersonDocument, variables, options);
 }
 export type PersonQueryCompositionFunctionResult = VueApolloComposable.UseQueryReturn<PersonQuery, PersonQueryVariables>;

@@ -8,15 +8,16 @@ const time = useTimeAgo(computed(() => data && data.value && data.value.startAt)
     <h3 text-2xl font-500>
       RESTful Api
     </h3>
-    <span v-if="data" font-500 text-gray>{{ data.pageview }} page views since </span>
-
-    <span text-gray>{{ time }}</span>
+    <span v-if="data" font-500 text-gray> {{ $t('visited', {
+      count: data.pageview,
+      time: time
+    }) }} </span>
     <div>
       <NuxtLink
         class="btn m-3 text-sm"
         to="/"
       >
-        Back
+        {{ $t('back') }}
       </NuxtLink>
     </div>
   </div>

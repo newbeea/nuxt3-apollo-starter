@@ -9,7 +9,8 @@ useMeta({
     { rel: 'shortcut icon', href: '/favicon.ico' },
   ],
 })
-
+const { setPreferredLanguage } = useLocal()
+setPreferredLanguage()
 </script>
 
 <template>

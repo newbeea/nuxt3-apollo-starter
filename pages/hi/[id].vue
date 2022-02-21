@@ -27,7 +27,7 @@ const go = () => {
 
     <template v-if="user.otherNames.length">
       <p text-sm my-4>
-        <span op-50>Also as known as:</span>
+        <span op-50> {{ $t('alias') }}</span>
         <ul>
           <li v-for="otherName in user.otherNames" :key="otherName">
             <router-link :to="`/hi/${otherName}`" replace>
@@ -45,7 +45,7 @@ const go = () => {
         class="btn m-3 text-sm"
         to="/"
       >
-        Back
+        {{ $t('back') }}
       </NuxtLink>
     </div>
   </div>
