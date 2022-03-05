@@ -19,6 +19,7 @@
     "apollo-server-core": "^3.6.0",
     "class-validator": "^0.13.2",
     "graphql": "^15.8.0",
+    "graphql-playground-html": "^1.6.30",
     "pinia": "^2.0.6",
     "reflect-metadata": "^0.1.13",
     "type-graphql": "^1.1.1",

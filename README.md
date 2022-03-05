@@ -69,17 +69,24 @@ Nuxt3 + Apollo Starter
 We recommend using [VS Code](https://code.visualstudio.com/) with [Volar](https://github.com/johnsoncodehk/volar) to get the best experience (You might want to disable Vetur if you have it).
 
 
+## Develop
 ### Clone to local
 
 If you prefer to do it manually with the cleaner git history
 
 ```bash
 npx degit newbeea/nuxt3-apollo-starter my-nuxt3-apollo-app
+
+```
+
+### Dev
+```
 cd my-nuxt3-apollo-app
 yarn # npm pnpm may not work properly in production mode
 yarn run dev
 ```
-
+Website: http://localhost:3000
+Graphql Playground: http://localhost:3000/api/playground
 
 ### Deploy
 #### Normal server
