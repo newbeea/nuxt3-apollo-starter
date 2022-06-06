@@ -6,8 +6,8 @@ Nuxt3 + Apollo Starter
 ## Preview
 [Netlify](https://nuxt3-apollo.netlify.app/)
 [Vercel](https://nuxt3-apollo-starter.vercel.app/)
-[Server](https://ssr-cdn-node.youbefashion.com/)
-[Serverless(aws lambda)](https://ssr-sls.youbefashion.com/)
+[Server](https://ssr-cdn-node.fameandpartners.com/)
+[Serverless(aws lambda)](https://ssr-sls.fameandpartners.com/)
 ## Features
 
 - 💚 [Nuxt 3](https://v3.nuxtjs.org) - SSR, ESR, File-based routing, components auto importing, modules, etc.
