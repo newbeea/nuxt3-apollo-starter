@@ -2,8 +2,28 @@ import { fileURLToPath } from 'url'
 import { dirname, resolve } from 'pathe'
 import { defineNuxtModule, addTemplate, addPluginTemplate } from '@nuxt/kit'
 
+import type {
+  InMemoryCache,
+  ApolloClientOptions,
+} from '@apollo/client/core'
+// @ts-expect-error #app resolved by Nuxt3
+import { NuxtApp } from '#app'
+type ClientConfig = Partial<ApolloClientOptions<any>> & {
+  authenticationType?: string
+}
 export interface ApolloModuleOptions {
-  uri: string
+  [name: string]: ClientConfig | any
+  default?: ClientConfig
+  clientConfigs?: {
+    default: ClientConfig
+    [name: string]: ClientConfig
+  }
+  cookieAttributes?: {
+    expires?: number
+    path?: string
+    domain?: string
+    secure?: boolean
+  }
 }
 export default defineNuxtModule<ApolloModuleOptions>({
 
@@ -11,9 +31,12 @@ export default defineNuxtModule<ApolloModuleOptions>({
     name: '@nuxt3/apollo-module',
     configKey: 'apollo',
   },
-  setup(options) {
+  setup(options, nuxt) {
+    nuxt.options.build.transpile = nuxt.options.build.transpile || []
+    nuxt.options.build.transpile.push('@apollo/client', 'ts-invariant/process')
+
     const __dirname__ = dirname(fileURLToPath(import.meta.url))
-    console.log(121231231)
+
     // save options to apollo.options.mjs
     addTemplate({
       filename: 'apollo.options.mjs',

@@ -57,6 +57,11 @@ export type LanguageFilterInput = {
   code?: InputMaybe<StringQueryOperatorInput>;
 };
 
+export type Mutation = {
+  __typename?: 'Mutation';
+  login: User;
+};
+
 export type Person = {
   __typename?: 'Person';
   name: Scalars['String'];
@@ -134,6 +139,11 @@ export type StringQueryOperatorInput = {
   ne?: InputMaybe<Scalars['String']>;
   nin?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   regex?: InputMaybe<Scalars['String']>;
+};
+
+export type User = {
+  __typename?: 'User';
+  token: Scalars['String'];
 };
 
 export type _Entity = Continent | Country | Language;

@@ -25,12 +25,18 @@ export default defineNuxtConfig({
     schema: ['http://localhost:3000/api/graphql', 'https://countries.trevorblades.com/'],
   },
   apollo: {
-    trevorblades: {
-      uri: 'https://countries.trevorblades.com/',
+    clientConfigs: {
+      trevorblades: {
+        uri: 'https://countries.trevorblades.com/',
+      },
+      default: {
+        // local graphql server, set URL env when build if using serverless or deploying on unknown port
+        uri: process.env.URL ? `${process.env.URL}/api/graphql` : 'http://localhost:3000/api/graphql',
+        authenticationType: 'Bearer', // default 'Bearer'
+      },
     },
-    default: {
-      // local graphql server, set URL env when build if using serverless or deploying on unknown port
-      uri: process.env.URL ? `${process.env.URL}/api/graphql` : 'http://localhost:3000/api/graphql',
+    cookieAttributes: {
+      expires: 14,
     },
   },
   unocss: {

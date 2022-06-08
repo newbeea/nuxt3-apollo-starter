@@ -1482,16 +1482,17 @@
     webpack-virtual-modules "^0.4.3"
     webpackbar "^5.0.2"
 
-"@nuxt3/apollo-module@0.0.9":
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/@nuxt3/apollo-module/-/apollo-module-0.0.9.tgz#ec9fa91bd8ecbb01892f9b4b7fb908a0e96a8c1c"
-  integrity sha512-1mPzTwMo2CTsJhX5+rfxriUUOE9auSFcsfS9d866R8Cogk3wXTpZ6m34K7CJLWYEcThCR7FI+Y+Eb3nWQaXSbA==
+"@nuxt3/apollo-module@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@nuxt3/apollo-module/-/apollo-module-0.1.0.tgz#0617cf1374932da4ea4d79c59fe68c18047acb5f"
+  integrity sha512-X8TClnyqkN165RPwhCtE29PvHfHcWy3DRvqhppH3kGfGnztCFyHDy61HW6M9sEr3zq1fDKmxi7FBsAwnHJeYWg==
   dependencies:
     "@apollo/client" "^3.5.6"
     "@nuxt/kit" "npm:@nuxt/kit-edge@3.0.0-27338323.1e98259"
     "@nuxt/types" "^2.15.8"
     "@vue/apollo-composable" "^4.0.0-alpha.16"
     consola "^2.15.3"
+    cookie-es "^0.5.0"
     pathe "^0.2.0"
 
 "@nuxt3/graphql-codegen-module@0.0.6":

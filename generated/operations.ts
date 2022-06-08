@@ -61,6 +61,11 @@ export type LanguageFilterInput = {
   code?: InputMaybe<StringQueryOperatorInput>;
 };
 
+export type Mutation = {
+  __typename?: 'Mutation';
+  login: User;
+};
+
 export type Person = {
   __typename?: 'Person';
   name: Scalars['String'];
@@ -140,6 +145,11 @@ export type StringQueryOperatorInput = {
   regex?: InputMaybe<Scalars['String']>;
 };
 
+export type User = {
+  __typename?: 'User';
+  token: Scalars['String'];
+};
+
 export type _Entity = Continent | Country | Language;
 
 export type _Service = {
@@ -159,6 +169,11 @@ export type PersonQueryVariables = Exact<{
 
 
 export type PersonQuery = { __typename?: 'Query', person: { __typename?: 'Person', name: string, tags?: Array<string | null> | null } };
+
+export type LoginMutationVariables = Exact<{ [key: string]: never; }>;
+
+
+export type LoginMutation = { __typename?: 'Mutation', login: { __typename?: 'User', token: string } };
 
 
 export const CountryDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Country"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"country"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"code"},"value":{"kind":"StringValue","value":"CN","block":false}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"code"}}]}}]}}]} as unknown as DocumentNode;
@@ -206,3 +221,22 @@ export function usePersonLazyQuery(variables: PersonQueryVariables | VueComposit
   return VueApolloComposable.useLazyQuery<PersonQuery, PersonQueryVariables>(PersonDocument, variables, options);
 }
 export type PersonQueryCompositionFunctionResult = VueApolloComposable.UseQueryReturn<PersonQuery, PersonQueryVariables>;
+export const LoginDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"Login"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"login"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"token"}}]}}]}}]} as unknown as DocumentNode;
+
+/**
+ * __useLoginMutation__
+ *
+ * To run a mutation, you first call `useLoginMutation` within a Vue component and pass it any options that fit your needs.
+ * When your component renders, `useLoginMutation` returns an object that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - Several other properties: https://v4.apollo.vuejs.org/api/use-mutation.html#return
+ *
+ * @param options that will be passed into the mutation, supported options are listed on: https://v4.apollo.vuejs.org/guide-composable/mutation.html#options;
+ *
+ * @example
+ * const { mutate, loading, error, onDone } = useLoginMutation();
+ */
+export function useLoginMutation(options: VueApolloComposable.UseMutationOptions<LoginMutation, LoginMutationVariables> | ReactiveFunction<VueApolloComposable.UseMutationOptions<LoginMutation, LoginMutationVariables>> = {}) {
+  return VueApolloComposable.useMutation<LoginMutation, LoginMutationVariables>(LoginDocument, options);
+}
+export type LoginMutationCompositionFunctionResult = VueApolloComposable.UseMutationReturn<LoginMutation, LoginMutationVariables>;
