@@ -1605,10 +1605,10 @@
     vite-node "^0.14.2"
     vite-plugin-checker "^0.4.6"
 
-"@nuxt3/apollo-module@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@nuxt3/apollo-module/-/apollo-module-0.1.0.tgz#0617cf1374932da4ea4d79c59fe68c18047acb5f"
-  integrity sha512-X8TClnyqkN165RPwhCtE29PvHfHcWy3DRvqhppH3kGfGnztCFyHDy61HW6M9sEr3zq1fDKmxi7FBsAwnHJeYWg==
+"@nuxt3/apollo-module@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@nuxt3/apollo-module/-/apollo-module-0.1.1.tgz#ffb28b0ebc4f2b1b0be89d0faa574b9a4303b081"
+  integrity sha512-BdLCiuBlKD4ThRmfTyQZWNIAXxFHXyHBgPoKDLe1qFO3zqI3Oqp9SEdVBQtiTIzB1+V3Hr86GIGAIFf1eaVh0g==
   dependencies:
     "@apollo/client" "^3.5.6"
     "@nuxt/kit" "npm:@nuxt/kit-edge@3.0.0-27338323.1e98259"

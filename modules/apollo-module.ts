@@ -33,7 +33,7 @@ export default defineNuxtModule<ApolloModuleOptions>({
   },
   setup(options, nuxt) {
     nuxt.options.build.transpile = nuxt.options.build.transpile || []
-    nuxt.options.build.transpile.push('@apollo/client', 'ts-invariant/process')
+    nuxt.options.build.transpile.push('@apollo/client', '@vue/apollo-composable', 'ts-invariant/process')
 
     const __dirname__ = dirname(fileURLToPath(import.meta.url))
 

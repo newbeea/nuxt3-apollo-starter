@@ -12,7 +12,7 @@
     "@apollo/client": "^3.5.6",
     "@envelop/core": "^1.6.5",
     "@intlify/nuxt3": "^0.1.10",
-    "@nuxt3/apollo-module": "^0.1.0",
+    "@nuxt3/apollo-module": "^0.1.1",
     "@nuxt3/graphql-codegen-module": "0.0.6",
     "@vue/composition-api": "^1.4.3",
     "apollo-graphql": "^0.9.5",
