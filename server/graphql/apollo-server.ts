@@ -8,7 +8,8 @@ export class ApolloServer extends ApolloServerBase {
   }
 
   createHandler() {
-    return async function(req: IncomingMessage, res: ServerResponse) {
+    return async function(event) {
+      const { req, res } = event
       const options = await this.createGraphQLServerOptions(req, res)
       try {
         const { graphqlResponse, responseInit } = await runHttpQuery([], {

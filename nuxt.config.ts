@@ -1,5 +1,5 @@
 import path from 'path'
-import { defineNuxtConfig } from 'nuxt3'
+import { defineNuxtConfig } from 'nuxt'
 // import '@nuxt3/apollo-module'
 // import '@nuxt3/graphql-codegen-module'
 // import '@unocss/nuxt'
